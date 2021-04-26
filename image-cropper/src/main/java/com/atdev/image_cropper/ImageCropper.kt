@@ -13,4 +13,10 @@ class ImageCropper(private val activity: Activity) {
             .request(intent, callback)
     }
 
+    fun start(callback: (androidx.activity.result.ActivityResult) -> Unit){
+        val intent = CropImage.activity().build(activity)
+        RequesterActivityResult(activity as FragmentActivity)
+            .request(intent, callback)
+    }
+
 }
