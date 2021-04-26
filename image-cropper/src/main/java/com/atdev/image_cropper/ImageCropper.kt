@@ -1,14 +1,16 @@
 package com.atdev.image_cropper
 
 import android.app.Activity
+import android.net.Uri
 import androidx.fragment.app.FragmentActivity
 
-class ImageCropper {
+class ImageCropper(private val activity: Activity) {
 
-    fun start(activity: Activity, callback: (androidx.activity.result.ActivityResult) -> Unit) {
+    fun start(uri: Uri, callback: (androidx.activity.result.ActivityResult) -> Unit) {
 
-        val intent = CropImage.activity().build(activity)
+        val intent = CropImage.activity(uri).build(activity)
         ActivityResultRequester(activity as FragmentActivity)
-                .request(intent, callback)
+            .request(intent, callback)
     }
+
 }
