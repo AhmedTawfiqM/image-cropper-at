@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.fragment.app.FragmentManager
 
-internal class ActivityResultFrag : Fragment() {
+internal class ActivityResultFragment : Fragment() {
     private lateinit var callback: (ActivityResult) -> Unit
 
     private lateinit var requestPermissionLauncher: ActivityResultLauncher<Intent>
@@ -38,13 +38,13 @@ internal class ActivityResultFrag : Fragment() {
     }
 
     companion object {
-        private fun newInstance(): ActivityResultFrag {
-            return ActivityResultFrag()
+        private fun newInstance(): ActivityResultFragment {
+            return ActivityResultFragment()
         }
 
         fun request(intent: Intent,
                     activity: FragmentActivity,
-                    callback: (ActivityResult) -> Unit): ActivityResultFrag {
+                    callback: (ActivityResult) -> Unit): ActivityResultFragment {
             var frag = findFragment(activity.supportFragmentManager)
             if (frag == null) {
                 frag = newInstance()
@@ -52,7 +52,7 @@ internal class ActivityResultFrag : Fragment() {
                 frag.callback = callback
                 activity.supportFragmentManager
                         .beginTransaction()
-                        .add(frag, ActivityResultFrag::class.java.simpleName)
+                        .add(frag, ActivityResultFragment::class.java.simpleName)
                         .commitAllowingStateLoss()
                 return frag
             }
@@ -62,8 +62,8 @@ internal class ActivityResultFrag : Fragment() {
             return frag
         }
 
-        private fun findFragment(fragmentManager: FragmentManager): ActivityResultFrag? {
-            return fragmentManager.findFragmentByTag(ActivityResultFrag::class.java.simpleName) as ActivityResultFrag?
+        private fun findFragment(fragmentManager: FragmentManager): ActivityResultFragment? {
+            return fragmentManager.findFragmentByTag(ActivityResultFragment::class.java.simpleName) as ActivityResultFragment?
         }
 
     }
