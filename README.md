@@ -11,13 +11,13 @@ that make Powerful (Zoom, Rotation, Multi-Source), customizable (Shape, Limits, 
 
 ```
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+    repositories {
+	...
+	maven { url 'https://jitpack.io' }
+   }
 }
 
-```
+
 
 
 ```
