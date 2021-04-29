@@ -12,6 +12,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val btnStartCrop= findViewById<Button>(R.id.btnStartCrop)
+
         btnStartCrop.setOnClickListener {
             ImageCropper(this).start {
                 Toast.makeText(this,"result ${it.data}",Toast.LENGTH_LONG).show()
