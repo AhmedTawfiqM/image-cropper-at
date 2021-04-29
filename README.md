@@ -24,8 +24,8 @@ allprojects {
 ```
 
 dependencies {
-  	 implementation 'com.github.AhmedTawfiqM:image-cropper-at:1.0.5'
-	}
+   implementation 'com.github.AhmedTawfiqM:image-cropper-at:1.0.5'
+}
   
   ```
 
@@ -43,8 +43,8 @@ dependencies {
 ```
 
  ImageCropper(this).start {
-                Toast.makeText(this,"result ${it.data}", Toast.LENGTH_LONG).show()
-            }
+     Toast.makeText(this,"result ${it.data}", Toast.LENGTH_LONG).show()
+ }
 ```
 
 see Example [Image Cropper Example](https://github.com/AhmedTawfiqM/image-cropper-at/blob/master/app/src/main/java/com/atdev/cropimageapp/MainActivity.kt)
