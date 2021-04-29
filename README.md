@@ -7,6 +7,19 @@ that make Powerful (Zoom, Rotation, Multi-Source), customizable (Shape, Limits, 
 
 1- Include the library
 
+
+
+```
+allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+}
+
+```
+
+
 ```
 
 dependencies {
@@ -15,13 +28,12 @@ dependencies {
   
   ```
 
-	
 
 2- Add CropImageActivity into your AndroidManifest.xml
 
 ```
 
- <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+ <activity android:name="com.atdev.image_cropper.CropImageActivity"
   android:theme="@style/Base.Theme.AppCompat"/> <!-- optional (needed if default theme has no action bar) --
 ```
 
