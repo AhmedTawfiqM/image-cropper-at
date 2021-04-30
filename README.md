@@ -43,7 +43,9 @@ dependencies {
 ```
 
  ImageCropper(this).start {
-     Toast.makeText(this,"result ${it.data}", Toast.LENGTH_LONG).show()
+     if (it.resultCode != Activity.RESULT_OK) return
+     val result = CropImage.getActivityResult(it.data)
+     val uri = result?.uri
  }
 ```
 
