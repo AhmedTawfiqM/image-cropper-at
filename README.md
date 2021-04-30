@@ -43,7 +43,7 @@ dependencies {
 ```
 
  ImageCropper(this).start {
-     if (it.resultCode != Activity.RESULT_OK) return
+     if (it.resultCode != Activity.RESULT_OK) return@start
      val result = CropImage.getActivityResult(it.data)
      val uri = result?.uri
  }
